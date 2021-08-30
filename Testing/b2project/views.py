@@ -72,7 +72,22 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('/') # redirect to Home page
-        
+
+def createcontract(request):
+    
+    return render(request, 'createcontract.html')
+
+def joblists(request):
+
+    return render(request, 'joblists.html')
+
+def contracts(request):
+
+    return render(request, 'contracts.html')
+
+def userprofile(request):
+
+    return render(request, 'userprofile.html')
 
 
 

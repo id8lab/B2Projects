@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,33 +94,9 @@
     </div>
   </header><!-- End Header -->
   <section>
-  <h1>Sign Up</h1>
-    <style>
-        h5{
-            color: red;
-        }
-    </style>
-
-
-    <!-- Error Messages show here -->
-    {% for message in messages %}
-    <h5>{{message}}</h5>
-    {% endfor %}
-
-    <form method="POST" action="register">
-
-        {% csrf_token %}  
-
-        <p>Username:</p>
-        <input type="text" name="username" />
-        <p>Email:</p>
-        <input type="email" name="email"/>
-        <p>Password:</p>
-        <input type = "password" name="password"/>
-        <p>Confirm Password</p>
-        <input type="password" name="password2" /><br>
-        <br>
-        <input type="submit"/>
-
-    </form>
+        
+        <h1> User Profile </h1>
+        
+    
     </section>
+</body>
