@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 # Create Database modle here 
-# Building Databse using Python classes whihc is from views.py
+# Building Databse using Python classes which is from views.py
 
 #Every time we add data or change here. After that, do 2 steps: make mirgrate and migraton on shell or bash
 
