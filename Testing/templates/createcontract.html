@@ -93,6 +93,8 @@
 
     </div>
   </header><!-- End Header -->
+
+  <div>
     <section>
         
         <h1> Create a Contract </h1>
@@ -100,10 +102,11 @@
         <h3>{{message}}</h3>
         {% endfor %}    
 
-        <form method="POST" action="createcontract">
+        <form method="POST" action="createcontract">  <!--New Contract Details can be edited in models.py (class Contract)-->
 
             {% csrf_token %}
-    
+            {{ form }}
+            <!--
             <p>Contract Name</p>
             <input type="text" name="ContractName" placeholder="Contract Name" required/>
             <br><br>
@@ -117,8 +120,11 @@
             <p>Payment Amount: <input type="number" name="PaymentFees" placeholder="USD"/ required> USD </p>
             <p><br>
             <br>
-            <input type="submit"/>
-        
+            -->
+            
+            <input type="submit" value="Submit">
+            
     </form>
     </section>
+    
 </body>

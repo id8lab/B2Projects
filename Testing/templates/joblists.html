@@ -1,5 +1,6 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -124,16 +125,34 @@
       
       <div class="row icon-boxes">
 
+        
+        {% for jobs in all%}
+
         <!--Job Offer-->
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
           <div class="icon-box">
             <div class="icon"><i class="ri-stack-line"></i></div>
-            <h4 class="title"><a href="">Job Placeholder 1</a></h4>
-            <p class="description"></p>
+            <h4 class="title"><a href="">
+              <h4>Contract</h4> </a></h4>
+
+           
+            <p> Contract Name: {{ jobs.ContractName }} <br/><br/>
+                Description: {{jobs.ContractDescription}}<br/><br/>
+                Tasks:  {{jobs.ContractTasks}}<br/><br/>
+                Start Date: {{jobs.StartDate}}<br/><br/>
+                End Date: {{jobs.EndDate}}<br/><br/>
+
+            </p>
+            
+
           </div>
+          
         </div>
+        {% endfor %}
 
       </div>
+
+      
     </div>
   </section><!-- End Hero -->
 

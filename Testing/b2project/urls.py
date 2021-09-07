@@ -9,8 +9,9 @@ urlpatterns = [
     path('login', views.login, name='login'),            #link to login html
     path('logout', views.logout, name='logout'),         #link to Logout    
     path('createcontract', views.createcontract, name='createcontract'), #link to createcontract.html
-    path('joblists', views.joblists, name='joblists'),   #link to joblists.html
-    path('contracts', views.contracts, name='contracts'),#link to contracts.html
+      #link to jobLists.html
+    path('contracts', views.contracts, name='contracts'),   #link to contracts.html
     path('userprofile', views.userprofile, name='userprofile'),     #link to userprofile.html
+    path('joblists', views.jobLists, name='joblists'),
 ]
 
