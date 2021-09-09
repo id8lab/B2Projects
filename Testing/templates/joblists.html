@@ -135,14 +135,38 @@
             <h4 class="title"><a href="">
               <h4>Contract</h4> </a></h4>
 
-           
-            <p> Contract Name: {{ jobs.ContractName }} <br/><br/>
-                Description: {{jobs.ContractDescription}}<br/><br/>
-                Tasks:  {{jobs.ContractTasks}}<br/><br/>
-                Start Date: {{jobs.StartDate}}<br/><br/>
-                End Date: {{jobs.EndDate}}<br/><br/>
+            <ul>
+              <li>
+                <p>
+                  <strong> Name: </strong> {{ jobs.ContractName }}
+                </p>
+              </li>  
 
-            </p>
+              <li>
+                <p>
+                  <strong>escription:</strong> {{jobs.ContractDescription}}
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <strong>Tasks: </strong> {{jobs.ContractTasks}}
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <strong> Start Date: </strong>{{jobs.StartDate}}
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <strong>End Date: </strong>{{jobs.EndDate}}
+                </p>
+              </li>
+
+          </ul>
             
 
           </div>

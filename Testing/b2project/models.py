@@ -27,8 +27,8 @@ class UserProfile(models.Model):
 
 class Contract(models.Model):   # Contract Template.
     ContractName = models.CharField (max_length = 100)
-    ContractDescription = models.TextField (max_length = 40000, default="Enter Contract Description")
-    ContractTasks = models.TextField (max_length = 40000, default = "Enter Contract Tasks")
+    ContractDescription = models.TextField (max_length = 40000)
+    ContractTasks = models.TextField (max_length = 40000)
     StartDate = models.DateTimeField('Start Date', max_length=8)
     EndDate = models.DateTimeField ('End Date', max_length=8)
     #user_name = models.ForeignKey(UserProfile, blank=True, null=True, on_delete=models.CASCADE)

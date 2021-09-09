@@ -93,35 +93,40 @@
 
     </div>
   </header><!-- End Header -->
-    <section>
+  
+    <section class="container">
+        
         
         <h1> Create a Contract </h1>
+        <br/><br/>
+        <!--
         {% for message in messages %}
         <h3>{{message}}</h3>
         {% endfor %}    
+        -->
+        {% if submitted %}
+            Your Contract Was Submitted Successfully!
 
-        <form method="POST" action="createcontract">  <!--New Contract Details can be edited in models.py (class Contract)-->
+        {% else %}      
 
-            {% csrf_token %}
-            {{ form }}
-            <!--
-            <p>Contract Name</p>
-            <input type="text" name="ContractName" placeholder="Contract Name" required/>
-            <br><br>
-            <p>Contract Description</p>
-            <textarea type="text" name="ContractDescription" placeholder="Describe your contract" required> </textarea>
-            <br><br>
-            <p>Task</p>
-            <input type="text" name="ContractTasks"/>
-            <br><br>
-            <p>Duration: <input type="date" name="StartDate"/>&nbsp; To <input type="date" name="EndDate"/></p>
-            <p>Payment Amount: <input type="number" name="PaymentFees" placeholder="USD"/ required> USD </p>
-            <p><br>
-            <br>
-            -->
-            
-            <input type="submit">
-            
-    </form>
+            <form method="POST" action="createcontract">  <!--New Contract Details can be edited in models.py (class Contract)-->
+
+              {% csrf_token %}
+
+              {{  form.as_p }}
+          
+         
+         
+              <input type="submit" value="Submit" class="btn btn-primary">
+          
+            </form>
+
+        {% endif %}
+        
+
+         
+       
+  
     </section>
+ 
 </body>

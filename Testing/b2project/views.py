@@ -1,8 +1,8 @@
-from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, redirect   #Redirect the user to another page
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from . models import Contract   #Importing Feature here from models.py
 from .forms import contractForm # importing contracts "forms"
 
@@ -78,11 +78,19 @@ def logout(request):
 
 
 def createcontract(request):    # saving the contract form if data inputted is valid
-    form = contractForm()   # form variable contractForm located in forms.py. Form Data is located in models.py
+    submitted = False           #if not submitted yet, submit
     if request.method == 'POST':    # checking if POST function is called on createcontract.html
         form = contractForm(request.POST)   # activating contractForm
-        if form.is_valid(): # checking if contract details are valid
-            form.save() # saving data, which can be edited and removed through django admin
+        if form.is_valid():      # checking if contract details are valid
+            form.save()         # saving data, which can be edited and removed through django admin
+            return HttpResponseRedirect('createcontract?submitted=True')  #After submit the form    
+    else:
+        form = contractForm
+        if 'submitted' in request.GET:
+            submitted = True
+
+    return render(request, 'createcontract.html', {'form': form, 'submitted': submitted})
+    
             
         
         
@@ -101,8 +109,8 @@ def createcontract(request):    # saving the contract form if data inputted is v
     #createdContract = contractForm.objects.create_contract(ContractName, ContractDescription, ContractTasks, StartDate, EndDate, PaymentFees)
     #createdContract.save
 
-    context = {'form':form}
-    return render(request, 'createcontract.html', context)
+    #context = {'form':form}
+    
 
 def jobLists(request):
     all_jobLists = Contract.objects.all()  #Fetch data from Database
