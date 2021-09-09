@@ -13,5 +13,6 @@ urlpatterns = [
     path('contracts', views.contracts, name='contracts'),   #link to contracts.html
     path('userprofile', views.userprofile, name='userprofile'),     #link to userprofile.html
     path('joblists', views.jobLists, name='joblists'),
-]
+    path('salarystatement', views.salarystatement, name = 'salarystatement')  # link to salarystatement.html
+]   
 

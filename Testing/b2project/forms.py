@@ -7,7 +7,7 @@ from .models import Contract    # importing Contract from models.py
 class contractForm(ModelForm):  # Display the Contract from models.py
     class Meta:
         model = Contract
-        fields = ('ContractName', 'ContractDescription', 'ContractTasks', 'StartDate', 'EndDate')  # Display all fields from Contract Class
+        fields = ('ContractName', 'ContractDescription', 'ContractTasks', 'StartDate', 'EndDate', 'Payment')  # Display all fields from Contract Class
         
         labels = {
             'ContractName': '', 
@@ -15,6 +15,7 @@ class contractForm(ModelForm):  # Display the Contract from models.py
             'ContractTasks': '',
             'StartDate': '',
             'EndDate': '',
+            'Payment Amount': '',
         }
 
 
@@ -24,9 +25,9 @@ class contractForm(ModelForm):  # Display the Contract from models.py
             'ContractTasks': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Contract Tasks'}),
             'StartDate': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Start Date'}),
             'EndDate': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'End Date'}),
+            'Payment': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Payment Amount'}),
         }
 
-        
 
 """
 from django import forms

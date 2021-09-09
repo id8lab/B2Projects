@@ -117,7 +117,9 @@ def jobLists(request):
     return render(request, 'joblists.html', {'all' : all_jobLists})   #Display it on frontend
 
 
-
+def salarystatement(request):
+    all_SalaryStatements = Contract.objects.all() # fetching data from SalaryStatement 
+    return render(request, 'salarystatement.html', {'all' : all_SalaryStatements})
 
 
 
