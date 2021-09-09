@@ -37,9 +37,8 @@ class Contract(models.Model):   # Contract Template.
     def __str__(self):
       return self.ContractName
 
-# class Image(models.Model):
-#    title = models.CharField(max_length=4000)
-#    image = models.ImageField(upload_to='images')
+class SalaryStatement(models.Model):
+    title = models.CharField(max_length=4000)
+    image = models.ImageField(upload_to='images/')
 
-    def __str__(self):
-      return self.title
+

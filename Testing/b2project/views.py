@@ -4,7 +4,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from . models import Contract   #Importing Feature here from models.py
-from .forms import contractForm # importing contracts "forms"
+from .forms import SalaryStatementForm, contractForm # importing contracts "forms"
 
 # Create your views here.   
 # ALL Main Things happen here  
@@ -92,7 +92,19 @@ def createcontract(request):    # saving the contract form if data inputted is v
     return render(request, 'createcontract.html', {'form': form, 'submitted': submitted})
     
             
-        
+def image_upload_view(request):
+    """Process images uploaded by users"""
+    if request.method == 'POST':
+        form = SalaryStatementForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            # return redirect ("Success")
+        else:
+            form = SalaryStatementForm()
+            return render(request, 'createcontract.html', {'form': form})
+
+#def success(request):
+   # return HttpResponse("Succesfully Uploaded")
         
 
 
