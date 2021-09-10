@@ -31,7 +31,7 @@ class Contract(models.Model):   # Contract Template.
     StartDate = models.DateTimeField('Start Date', max_length=8)
     EndDate = models.DateTimeField ('End Date', max_length=8)
     Payment = models.TextField (max_length = 40000, default = "")
-    SalaryStatement = models.ImageField(null=True, blank=True, upload_to='images/')
+    SalaryStatement = models.ImageField(null=True, blank=True, upload_to='images/') # storing images to folder: images
     
     #user_name = models.ForeignKey(UserProfile, blank=True, null=True, on_delete=models.CASCADE)
 
