@@ -31,14 +31,16 @@ class Contract(models.Model):   # Contract Template.
     StartDate = models.DateTimeField('Start Date', max_length=8)
     EndDate = models.DateTimeField ('End Date', max_length=8)
     Payment = models.TextField (max_length = 40000, default = "")
+    SalaryStatement = models.ImageField(null=True, blank=True, upload_to='images/')
     
     #user_name = models.ForeignKey(UserProfile, blank=True, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
       return self.ContractName
 
+"""
 class SalaryStatement(models.Model):
     title = models.CharField(max_length=4000)
-    image = models.ImageField(upload_to='images/')
-
+    image = models.ImageField(null=True, blank=True, upload_to='images/')
+"""
 

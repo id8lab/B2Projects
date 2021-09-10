@@ -17,9 +17,11 @@ urlpatterns = [
     path('userprofile', views.userprofile, name='userprofile'),     #link to userprofile.html
     path('joblists', views.jobLists, name='joblists'), #link to jobLists.html
     path('salarystatement', views.salarystatement, name = 'salarystatement'),  # link to salarystatement.html
-    path('image_upload', image_upload_view, name = "image upload"),
-]   
+   # path('image_upload', salarystatement, name = "image upload"),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+"""
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+"""

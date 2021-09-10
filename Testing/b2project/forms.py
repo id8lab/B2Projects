@@ -1,14 +1,14 @@
 #from django import form
 from django import forms
 from django.forms import ModelForm  #Add data to our database
-from .models import Contract, SalaryStatement    # importing Contract from models.py
+from .models import Contract    # importing Contract from models.py
 from .models import *
 
 #Create Contract forms
 class contractForm(ModelForm):  # Display the Contract from models.py
     class Meta:
         model = Contract
-        fields = ('ContractName', 'ContractDescription', 'ContractTasks', 'StartDate', 'EndDate', 'Payment')  # Display all fields from Contract Class
+        fields = ('ContractName', 'ContractDescription', 'ContractTasks', 'StartDate', 'EndDate', 'Payment', 'SalaryStatement')  # Display all fields from Contract Class
         
         labels = {
             'ContractName': '', 
@@ -28,11 +28,14 @@ class contractForm(ModelForm):  # Display the Contract from models.py
             'EndDate': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'End Date'}),
             'Payment': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Payment Amount'}),
         }
+
+"""
 # image handling form
 class SalaryStatementForm(forms.ModelForm):
     class Meta:
         model = SalaryStatement
         fields = ('title', 'image')
+"""
 
 """
 from django import forms
