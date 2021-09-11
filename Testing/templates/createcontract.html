@@ -109,10 +109,10 @@
 
         {% else %}      
 
-            <form method="POST" action="createcontract">  <!--New Contract Details can be edited in models.py (class Contract)-->
+            <form method="POST" enctype="multipart/form-data">  <!--New Contract Details can be edited in models.py (class Contract)-->
 
               {% csrf_token %}
-
+              {{ form.media }}
               {{  form.as_p }}
           
          
@@ -120,12 +120,11 @@
               <input type="submit" value="Submit" class="btn btn-primary">
           
             </form>
-
+          
         {% endif %}
         
 
-         
-       
+
   
     </section>
  
